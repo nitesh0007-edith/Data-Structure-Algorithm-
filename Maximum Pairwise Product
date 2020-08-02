@@ -1,14 +1,14 @@
 
 #Max time used: 0.14/5.00, max memory used: 26456064/536870912
 
-def max_pairwise_product_fast(n, numbers):
+def maximum_pairwise(num, numbers):
     max_index1 = -1
-    for i in range(n):
+    for i in range(num):
         if max_index1 == -1 or numbers[i] > numbers[max_index1]:
             max_index1 = i
 
     max_index2 = -1
-    for i in range(n):
+    for i in range(num):
         if i != max_index1 and (max_index2 == -1 or numbers[i] > numbers[max_index2]):
             max_index2 = i
 
@@ -18,6 +18,6 @@ def max_pairwise_product_fast(n, numbers):
 if __name__ == '__main__':
     n = int(input())
     a = [int(x) for x in input().split()]
-    assert (len(a) == n)
+    assert (len(a) == num)
 
-    print(max_pairwise_product_fast(n, a))
+    print(maximum_pairwise(num, a))
